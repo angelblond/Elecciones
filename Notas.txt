@@ -1,0 +1,72 @@
+Notas importantes MySQL
+
+- Comando para listar las bases de datos disponibles (antes de entrar a una): SHOW DATABASES;
+
+- Comando para listar las tablas de la base de datos (actual): SHOW TABLES;
+
+- Comando para crear base de datos: CREATE DATABASE NOMBRE_BD;
+
+- Comando para entrar en base de datos: USE NOMBRE_BD;
+
+- Comando para ejecutar un script SQL (estando ya en la BD): source ruta_completa_archivo;
+OJO: las rutas van con esta barra: /
+
+- Los drop table deben colocarse en orden inverso a las tablas
+
+- Usuario por defecto de MySQL: root. Clave por defecto: <vacio>
+
+- Los comentarios en MySQL se hacen con el caracter numeral (#)
+
+
+------------------------------------------------------------------
+Acentos y ñ para mysql
+
+¿Por qué no se ven los acentos de nuestras consultas en base de datos?, ¿por qué salen esos simbolos extraños en lugar de las vocales acentuadas y letras "ñ"?
+
+La solución es una configuración en el servidor de base de datos.
+
+Pasos:
+
+1) Buscamos el archivo "my.cnf" en la carpeta donde tenemos instalado "mysql". Para el caso de WAMP la configuración está en:
+
+C:\wamp\bin\mysql\mysql5.6.12\my.ini
+
+2) Abrimos el archivo con cualquier editor de texto
+
+3) Agregamos los siguientes datos, cada uno en su etiqueta( [etiquetas] ) correspondiente.
+
+[client]
+default-character-set=UTF8
+
+[mysqldump]
+default-character-set=UTF8
+
+4) Reiniciamos el servidor o todos los servicios de mysql y listo, el cambio surte efecto.
+
+Tomado y adaptado de: http://www.forosdelweb.com/f15/acentos-n-para-mysql-171834/
+
+------------------------------------------------------------------
+
+Notas de PHP:
+
+- Para almacenar variables de sesion se debe colocar EN TODAS las paginas que las usaran el comando: 
+
+session_start();
+
+Cuando se quiere inicializar el espacio de session (borrar todas las variables):
+
+$_SESSION = array();
+
+y luego para configurar su valor:
+
+$_SESSION['nombre_var'] = el_valor;
+
+(el_valor puede ser un valor o una variable pasada, por ejemplo, via $_POST)
+
+Para leer su valor basta con tener session_start() al principio del script y leer de:
+
+$_SESSION['nombre_var']
+
+- OJO ACENTOS!! Para poder recibir queries con acentos, después de mysql_connect y mysql_select_db se debe usar:
+
+mysql_query("SET NAMES 'utf8'")

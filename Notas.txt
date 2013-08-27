@@ -70,3 +70,6 @@ $_SESSION['nombre_var']
 - OJO ACENTOS!! Para poder recibir queries con acentos, después de mysql_connect y mysql_select_db se debe usar:
 
 mysql_query("SET NAMES 'utf8'")
+
+
+sss

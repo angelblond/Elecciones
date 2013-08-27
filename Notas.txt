@@ -71,5 +71,4 @@ $_SESSION['nombre_var']
 
 mysql_query("SET NAMES 'utf8'")
 
-
-sss
+esta linea es adicional

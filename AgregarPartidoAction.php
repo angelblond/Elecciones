@@ -4,6 +4,8 @@
 	$tendencia = $_POST['tendencia'];
 	$conexion = conectorBD::getInstance();
 	$nuevoPartido = new Partido($nombre, $tendencia);
-	$nuevoPartido.agregarPartido();
-	
+	$inserta = $nuevoPartido.agregarPartido();
+	if (inserta == 0){
+		header("Location: Mensaje.php?comando=AgregarExito");
+	}
 ?>

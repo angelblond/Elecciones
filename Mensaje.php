@@ -47,7 +47,7 @@
 											echo "Partido agregado exitosamente!";
 										}
 										else if ($_GET['comando'] == "AgregarPFracaso"){
-											echo "Error al agregar partido";
+											echo "Error al agregar partido. Que lamentable.";
 										}
 									}
 								?>

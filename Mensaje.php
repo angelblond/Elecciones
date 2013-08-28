@@ -41,7 +41,16 @@
 					<div>
 						<ul class="style1">
 							<li class="first">
-								
+								<?php 
+									if(isset($_GET['comando'])){
+										if($_GET['comando'] == "AgregarPExito"){
+											echo "Partido agregado exitosamente!";
+										}
+										else if ($_GET['comando'] == "AgregarPFracaso"){
+											echo "Error al agregar partido";
+										}
+									}
+								?>
 							</li>
 							<li>
 								

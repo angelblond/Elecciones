@@ -43,9 +43,9 @@
 							<li class="first">
 								<form action="AgregarPartidoAction.php" method="POST" id="datos">
 									<strong>Nombre del partido</strong>
-									<input type="text" maxlength="100" size="50" id="partido"/><br/><br/>
+									<input type="text" maxlength="100" size="50" name="partido"/><br/><br/>
 									<strong>Tendencia política</strong>
-									<input type="text" maxlength="200" size="50" id="tendencia"/><br/><br/>
+									<input type="text" maxlength="200" size="50" name="tendencia"/><br/><br/>
 									<input type="submit" value="Agregar"/>
 								</form>								
 							</li>
